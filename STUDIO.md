@@ -2,6 +2,8 @@
 
 LostAcropolis is a mobile tabletop-RPG collectible card game, built as a web game that runs in a phone browser and is published on GitHub Pages.
 
+Live at https://finestmeats.github.io/LostAcropolis/ (keep the capitalisation).
+
 This file is the studio's rulebook. Every scheduled studio shift reads it first.
 
 ## Vision (draft, Lucas to refine)
