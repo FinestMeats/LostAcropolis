@@ -1,16 +1,25 @@
 # LostAcropolis Studio
 
-LostAcropolis is a mobile tabletop-RPG collectible card game, built as a web game that runs in a phone browser and is published on GitHub Pages.
+LostAcropolis is a mobile cyberpunk action RPG built around collectible cards. It's a web game that runs in a phone browser and is published on GitHub Pages.
 
 Live at https://finestmeats.github.io/LostAcropolis/ (keep the capitalisation).
 
 This file is the studio's rulebook. Every scheduled studio shift reads it first.
 
-## Vision (draft, Lucas to refine)
-- Short sessions built for phones, and fully playable with one thumb.
-- You collect cards (heroes, gear, spells, encounters) and build a party deck.
-- You run the deck through tabletop-style adventures in the ruins of the Lost Acropolis.
+## Vision (set by Lucas 2026-10-24)
+- **Setting:** cyberpunk, in a future Greece. "Lost Acropolis" names the setting only; it is not a ruins-crawl or a historical game.
+- **Feel:** gameplay must be more engaging than a tabletop RPG or a card game. The TTRPG side shows up only in the mechanics: stats, rolls, checks and builds. The moment-to-moment play should be active and fast, not turn-by-turn paperwork.
+- **No party deck.** Each account has **5 character slots**, so the player can build and play 5 different character styles.
+- **Account-wide collection:** every card, item and unlock belongs to the account and can be used by every character independently. Equipping card X on character 1 does not take it away from characters 2 to 5.
+- **Account-wide progression:** as the player progresses, account-wide buffs and stat boosts unlock and apply to all characters.
+- **Character view screen (must have):** the player interacts with cards to equip weapons, armour, enhancements and other items to a character, and sees how the character's stats change.
+- Built for phones: short sessions, playable with one thumb.
 - No real-money monetization until Lucas decides otherwise.
+
+## Tech (Lucas: "whatever is necessary for the best user experience")
+- Default to plain HTML/CSS/JS with ES modules, with no build step and no framework, so it stays fast on phones.
+- Add a library only when it clearly improves the player experience (for example, a canvas or WebGL renderer for action scenes). Log the reason in DECISIONS.md and keep that PR open for Lucas, per the merge rules.
+- Aim for an installable PWA (manifest plus offline cache) so it feels like an app on the home screen.
 
 ## How a shift works
 1. Read STUDIO.md, BACKLOG.md, DECISIONS.md (the last 20 entries) and QUESTIONS.md.
