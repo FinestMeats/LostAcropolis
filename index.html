@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1622">
+<title>Lost Acropolis</title>
+<style>
+  :root { --bg:#1b1622; --panel:#2a2233; --gold:#e3b35b; --text:#f2ead9; --muted:#a99c8a; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--text);
+    font-family:Georgia, "Times New Roman", serif; overscroll-behavior:none; }
+  #app { min-height:100%; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; gap:24px; padding:24px 16px env(safe-area-inset-bottom); text-align:center; }
+  h1 { margin:0; font-size:2.2rem; letter-spacing:.08em; color:var(--gold); }
+  p { margin:0; color:var(--muted); }
+  button { font:inherit; font-size:1.1rem; padding:14px 32px; border-radius:12px; border:2px solid var(--gold);
+    background:var(--panel); color:var(--text); min-width:200px; }
+  .card { width:150px; height:210px; border-radius:12px; background:var(--panel); border:2px solid var(--gold);
+    display:flex; flex-direction:column; justify-content:space-between; padding:12px; }
+  .card .name { color:var(--gold); }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<div id="app">
+  <section id="screen-title">
+    <h1>LOST ACROPOLIS</h1>
+    <p>A tabletop card adventure</p>
+    <p style="margin-top:24px"><button id="btn-start">Enter the ruins</button></p>
+  </section>
+  <section id="screen-game" class="hidden">
+    <p id="turn-label">Turn 1</p>
+    <div class="card" id="hand-card"><span class="name">Wandering Hoplite</span><span>ATK 2 · HP 3</span></div>
+    <p><button id="btn-play">Play card</button></p>
+  </section>
+</div>
+<script>
+// Lost Acropolis: game state and loop live here until the code is split into modules.
+const GAME_VER = '0.0.1';
+const state = { screen: 'title', turn: 1 };
+
+function show(screen) {
+  state.screen = screen;
+  for (const el of document.querySelectorAll('#app > section')) {
+    el.classList.toggle('hidden', el.id !== 'screen-' + screen);
+  }
+}
+
+function playCard() {
+  state.turn += 1;
+  document.getElementById('turn-label').textContent = 'Turn ' + state.turn;
+}
+
+document.getElementById('btn-start').addEventListener('click', () => show('game'));
+document.getElementById('btn-play').addEventListener('click', playCard);
+window.LostAcropolis = { GAME_VER, state };
+</script>
+</body>
+</html>
