@@ -35,6 +35,17 @@ The repo is public and the game is a public web page: assume anyone can read eve
 9. **Accounts, if they're ever added:** use the provider's hosted flows (e.g. Firebase Auth) rather than custom login or password reset; turn on email-enumeration protection; same generic message for "wrong email" and "wrong password"; no SMS sign-in or SMS codes without rate limits (SMS pumping costs money); password reset links built from a fixed site URL, never the request's Host header; no redirect to a URL taken from the query string.
 10. **Custom domain, if one is added:** verify it in GitHub's Pages settings, and remove the DNS record *before* turning Pages off or renaming the repo (otherwise someone else can claim the subdomain).
 
+## Legal and player-trust rules (added 2026-11-02)
+Not legal advice; when a rule triggers, flag it to Lucas in QUESTIONS.md before shipping.
+
+1. **Every asset has a licence on record.** Art, fonts, sounds, music, icons and code snippets go in `CREDITS.md` with source, author, licence and link, in the same PR that adds them. Only use licences that allow commercial use and modification (CC0, CC-BY with credit, OFL for fonts, MIT/Apache for code). No ripped assets from other games, no "found it on Google", no AI-generated imitations of a known character or brand.
+2. **Collect the minimum.** No analytics, ad or tracking SDKs without Lucas. Anything that collects personal data (sign-in, email, feedback text, device info) needs, before it ships: a plain-English privacy policy page, a way for players to delete their account and data, and a line in QUESTIONS.md for Lucas.
+3. **Assume kids may play.** Don't ask for age, real names, photos or location. Any player-to-player text (names on a ladder, chat) gets length caps and a filter.
+4. **No dark patterns.** No fake timers or fake scarcity, no confirm-shaming, no pre-ticked boxes, nothing that makes leaving or deleting harder than joining. Odds for any random reward (packs, chests, crits that matter) are shown in-game.
+5. **Honest numbers.** Prices shown in AUD including GST, with no fees added at checkout. No fake reviews, player counts or ratings, and no claims the game can't back up. (Monetization still needs Lucas first.)
+6. **Accessibility basics.** Text contrast of at least 4.5:1, tap targets at least 44px, labels on icon-only buttons, and nothing that relies on colour alone (a CRIT also gets a word or shape). Respect `prefers-reduced-motion` for screen shake and flashes.
+7. **Who runs it.** Once the game collects data or takes money, an About/contact page names the business (with ABN) and a support email, alongside the privacy policy and terms.
+
 ## How a shift works
 1. Read STUDIO.md, BACKLOG.md, DECISIONS.md (the last 20 entries) and QUESTIONS.md.
 2. Pick the top `Ready` item in BACKLOG.md. If none is ready, groom the backlog: break down an epic or write a design spec.
