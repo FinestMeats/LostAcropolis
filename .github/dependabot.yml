@@ -1,0 +1,11 @@
+# Dependency scanning: Dependabot opens a PR when a pinned GitHub Action or an npm dev dependency has an update or a security fix.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly

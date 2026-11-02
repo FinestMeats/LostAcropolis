@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "node tests/smoke.cjs"
+    "test": "node tests/security.cjs && node tests/smoke.cjs"
   },
   "devDependencies": {
     "playwright": "1.63.0"
