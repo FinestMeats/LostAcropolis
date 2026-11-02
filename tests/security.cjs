@@ -1,4 +1,4 @@
-// Security check: static rules from STUDIO.md "Security rules", run by `npm test` and CI.
+// Security check: static rules from docs/rules/security.md, run by `npm test` and CI.
 // Everything in this repo and on the live page is public, so this fails the build if:
 //  - a secret-looking value (token, private key, PIN, password, service account) is committed
 //  - the page loses its Content-Security-Policy
