@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1b1622">
+<!-- Content Security Policy: the page may only load scripts, styles, images and data from its own origin.
+     Blocks a compromised or swapped third-party script (the polyfill.io attack) and most injected markup.
+     Widen it deliberately, one origin at a time, and log why in DECISIONS.md. tests/security.cjs checks it is here. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Lost Acropolis</title>
 <style>
   :root { --bg:#1b1622; --panel:#2a2233; --gold:#e3b35b; --text:#f2ead9; --muted:#a99c8a; }
